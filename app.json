@@ -1,6 +1,6 @@
 {
     "name": "telegram-auto_forward",
-    "description": "A bot to forward msg from one tg channel/group to another easily",
+    "description": "Lê Hữu Khoa - Con bot ku Lượng để forward tin nhắn từ 1 hay nhiều channel/group khác về channel/group mình easily",
     "keywords": [
       "telegram",
       "forward",
@@ -10,26 +10,24 @@
     "repository": "https://github.com/huukhoa1412/autotelegram",
     "env": {
         "APP_ID": {
-            "description": "Your API_ID from https://my.telegram.org/apps"
+            "description": "Tạo API_ID từ https://my.telegram.org/apps"
         },
         "API_HASH": {
-            "description": "Your API_HASH from https://my.telegram.org/apps"
+            "description": "Tạo API_HASH từ https://my.telegram.org/apps"
         },
+        "SESSION": {
+            "description": "Điền session id từ trang https://replit.com/@TeamUltroid/UltroidStringSession"
+        }
         "FROM_CHANNEL": {
-            "description": "from channel ids for auto post, Use Space to add multiple Channels"
+            "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
         },
         "TO_CHANNEL": {
-            "description": "to channel or group or chat id for auto post"
-        },
-        "USERS_CHANNEL": {
-            "description": "user id"
+            "description": "Điền channel or group or chat id để auto post"
         },
         "USERSNAME_CHANNEL": {
             "description": "username"
         },
-        "SESSION": {
-            "description": "Enter the session id got from repl https://replit.com/@TeamUltroid/UltroidStringSession"
-        }
+
     },
     "buildpacks": [
         {
