@@ -15,7 +15,7 @@ SESSION = config("SESSION")
 FROM_ = config("FROM_CHANNEL")
 TO_ = config("TO_CHANNEL")
 USERS_ = config("USERS_CHANNEL")
-USER_NAME_ = config("USERSNAME_CHANNEL")
+USERS_NAME_ = config("USERSNAME_CHANNEL")
 
 # Tách chuỗi thành dạng list ngăn cách khoảng trắng
 #User
