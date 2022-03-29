@@ -7,7 +7,7 @@
       "auto-forward",
       "send"
     ],
-    "repository": "https://github.com/Ayush7445/telegram-forwarder_auto",
+    "repository": "https://github.com/huukhoa1412/autotelegram",
     "env": {
         "APP_ID": {
             "description": "Your API_ID from https://my.telegram.org/apps"
@@ -21,8 +21,11 @@
         "TO_CHANNEL": {
             "description": "to channel or group or chat id for auto post"
         },
-        "USER_CHANNEL": {
-            "description": "to channel or group or chat id for auto post"
+        "USERS_CHANNEL": {
+            "description": "user id"
+        },
+        "USERSNAME_CHANNEL": {
+            "description": "username"
         },
         "SESSION": {
             "description": "Enter the session id got from repl https://replit.com/@TeamUltroid/UltroidStringSession"
