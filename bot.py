@@ -48,8 +48,11 @@ async def sender_bH(event):
             #)
             # Lấy username từ New Message
             sender = await event.get_sender()
+            from_id = event.peer_id.channel_id
             nguoidung = sender.username
-            print(sender.username)
+            fisrt_name = sender.first_name
+            last_name = sender.last_name
+            print(f'User:{nguoidung}-{fisrt_name}-{last_name}-{from_id}')
             # Lấy id user từ New Message
             #sender = event.sender_id
             #print(sender)
