@@ -58,7 +58,7 @@ async def sender_bH(event):
             #print(sender)
             if nguoidung in USER_NAME:
             #if sender in USER_ID:
-                await BotHuuKhoa.forward_messages(entity=i, messages=event.message)
+                await BotHuuKhoa.forward_messages(i, messages=event.message)
                 print(event.date.strftime('%m/%d/%Y, %H:%M:%S'))
                 print('ok')        
         except Exception as e:
