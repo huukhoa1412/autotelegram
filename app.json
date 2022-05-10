@@ -29,10 +29,10 @@
         },
         "TO_CHANNEL_USER": {
             "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
-        }
+        },
         "USER": {
             "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
-        }
+        },
         "USER_NAME": {
             "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
         }
