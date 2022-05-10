@@ -21,13 +21,21 @@
         "FROM_CHANNEL": {
             "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
         },
-        "TO_CHANNEL": {
-            "description": "Điền channel or group or chat id để auto post"
+        "FROM_CHANNEL_USER": {
+            "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
         },
-        "USERSNAME_CHANNEL": {
-            "description": "username"
+        "TO_CHANNEL": {
+            "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
+        },
+        "TO_CHANNEL_USER": {
+            "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
         }
-
+        "USER": {
+            "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
+        }
+        "USER_NAME": {
+            "description": "Điền ID channel hoặc ID nhóm, khoảng cách để nhiều nhóm "
+        }
     },
     "buildpacks": [
         {

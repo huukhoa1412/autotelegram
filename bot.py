@@ -13,19 +13,24 @@ APP_ID = config("APP_ID", default=None, cast=int)
 API_HASH = config("API_HASH", default=None)
 SESSION = config("SESSION")
 FROM_ = config("FROM_CHANNEL")
+FROM_USER_ = config("FROM_CHANNEL_USER")
 TO_ = config("TO_CHANNEL")
-USERS_ = config("USERS_CHANNEL")
-USERS_NAME_ = config("USERSNAME_CHANNEL")
+TO_USER_ = config("TO_CHANNEL_USER")
+USER_ID_ = config("USER")
+USER_NAME_ = config("USER_NAME")
+
 
 # Tách chuỗi thành dạng list ngăn cách khoảng trắng
 #User
-USER_ID = [int(i) for i in USERS_.split()]
+USER_ID = [int(i) for i in USER_ID_.split()]
 #FROM Channel ID
 FROM = [int(i) for i in FROM_.split()]
 #To Channel ID
 TO = [int(i) for i in TO_.split()]
 #User Name
-USER_NAME = USERS_NAME_.split()
+TO_USER = TO_USER_.split()
+#User TO Channel
+USER_NAME = USER_NAME_.split()
 
 #Khai báo và kết nối client
 try:
@@ -40,7 +45,6 @@ except Exception as ap:
 #Sự kiện : Có tin nhắn báo về 
 @BotHuuKhoa.on(events.NewMessage(incoming=True, chats=FROM))
 async def sender_bH(event):
-    for i in TO:
         try:
             #await BotzHubUser.send_message(
             #    i,
@@ -58,7 +62,8 @@ async def sender_bH(event):
             #print(sender)
             if nguoidung in USER_NAME:
             #if sender in USER_ID:
-                await BotHuuKhoa.forward_messages(i, messages=event.message)
+                target = await BotHuuKhoa.get_entity(to_channel)
+                await BotHuuKhoa.forward_messages(entity=target, messages=event.message)
                 print(event.date.strftime('%m/%d/%Y, %H:%M:%S'))
                 print('ok')        
         except Exception as e:
