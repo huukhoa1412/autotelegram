@@ -9,25 +9,35 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
 print("Starting...")
 
 # Basics
+#Đăng nhập telegram
 APP_ID = config("APP_ID", default=None, cast=int)
 API_HASH = config("API_HASH", default=None)
 SESSION = config("SESSION")
+#FROM
+##ID
 FROM_ = config("FROM_CHANNEL")
+##USENAME
 FROM_USER_ = config("FROM_CHANNEL_USER")
+#TO
+##ID
 TO_ = config("TO_CHANNEL")
+##USENAME
 TO_USER_ = config("TO_CHANNEL_USER")
+#USER
+##ID
 USER_ID_ = config("USER")
+##USENAME
 USER_NAME_ = config("USER_NAME")
 
 
 # Tách chuỗi thành dạng list ngăn cách khoảng trắng
-#User
+#User ID
 USER_ID = [int(i) for i in USER_ID_.split()]
 #FROM Channel ID
 FROM = [int(i) for i in FROM_.split()]
 #To Channel ID
 TO = [int(i) for i in TO_.split()]
-#User Name
+#UserName
 TO_USER = TO_USER_.split()
 #User TO Channel
 USER_NAME = USER_NAME_.split()
@@ -45,11 +55,8 @@ except Exception as ap:
 #Sự kiện : Có tin nhắn báo về 
 @BotHuuKhoa.on(events.NewMessage(incoming=True, chats=FROM))
 async def sender_bH(event):
+     for i in TO:   
         try:
-            #await BotzHubUser.send_message(
-            #    i,
-            #    event.message
-            #)
             # Lấy username từ New Message
             sender = await event.get_sender()
             from_id = event.peer_id.channel_id
@@ -62,8 +69,8 @@ async def sender_bH(event):
             #print(sender)
             if nguoidung in USER_NAME:
             #if sender in USER_ID:
-                target = await BotHuuKhoa.get_entity(TO_USER)
-                await BotHuuKhoa.forward_messages(entity=target, messages=event.message)
+                dialogs = await BotHuuKhoa.get_dialogs(limit=None)
+                await BotHuuKhoa.forward_messages(entity=i, messages=event.message)
                 print(event.date.strftime('%m/%d/%Y, %H:%M:%S'))
                 print('ok')        
         except Exception as e:
